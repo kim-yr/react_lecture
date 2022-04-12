@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "mixin";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+img {
+  vertical-align: top;
+}
+body {
+  font-family: "Roboto", "Noto Serif KR", sans-serif;
+  color: #111;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 5%) #333;
+  font-size: 16px;
+}
+#header {
+  height: 50px;
+  @include flexCenter();
+  background-color: #fff;
+  overflow: hidden;
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include longShadow(#ccc, right, 30);
+  }
+}
+#contents {
+  padding: 100px 0;
+  .container {
+    width: 1440px;
+    margin: auto;
+    .subTitle {
+      color: #fff;
+      font-weight: 400;
+      font-size: 32px;
+      margin-bottom: 100px;
+      text-transform: uppercase;
+      strong {
+        font-size: 32px;
+        font-weight: 900;
+      }
+    }
+    .movieList {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: calc(50% - 20px);
+        background-color: #fff;
+        margin: 10px 10px 100px 10px;
+        display: flex;
+        padding: 30px;
+        padding-bottom: 0;
+        .imgBox {
+          margin-top: -100px;
+          position: relative;
+          img {
+            height: 300px;
+            width: 200px;
+            object-fit: cover;
+            box-shadow: 10px 10px 10px rgba($color: #000000, $alpha: 0.2);
+          }
+          .point {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(5, 85, 198);
+            color: #fff;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            @include longShadow(darken(rgb(5, 85, 198), 10), right, 30);
+            position: absolute;
+            left: 10px;
+            font-weight: 700;
+            bottom: 10px;
+          }
+        }
+        .info {
+          margin-left: 30px;
+          text-align: left;
+          .titleBox {
+            margin-bottom: 20px;
+            h3 {
+              font-size: 24px;
+            }
+            .date {
+              color: #999;
+              margin-top: 10px;
+              font-size: 14px;
+            }
+          }
+          .overview {
+            @include multiEllipsis(1.25, 3);
+          }
+          .vote {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+#footer {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .copyright {
+    background-color: #fff;
+    padding: 10px 50px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-size: 14px;
+    strong {
+      font-weight: 800;
+    }
+  }
+}

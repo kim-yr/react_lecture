@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 16px; }
+
+img { vertical-align: top; }
+
+body { font-family: "Lato", "Noto Sans KR", sans-serif; color: #111; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 5%) #333; font-size: 16px; }
+
+#header { height: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #fff; overflow: hidden; }
+
+#header h1 { font-size: 18px; font-weight: 700; text-transform: uppercase; text-shadow: 1px 1px 0px #ccc,2px 2px 0px #ccc,3px 3px 0px #ccc,4px 4px 0px #ccc,5px 5px 0px #ccc,6px 6px 0px #ccc,7px 7px 0px #ccc,8px 8px 0px #ccc,9px 9px 0px #ccc,10px 10px 0px #ccc,11px 11px 0px #ccc,12px 12px 0px #ccc,13px 13px 0px #ccc,14px 14px 0px #ccc,15px 15px 0px #ccc,16px 16px 0px #ccc,17px 17px 0px #ccc,18px 18px 0px #ccc,19px 19px 0px #ccc,20px 20px 0px #ccc,21px 21px 0px #ccc,22px 22px 0px #ccc,23px 23px 0px #ccc,24px 24px 0px #ccc,25px 25px 0px #ccc,26px 26px 0px #ccc,27px 27px 0px #ccc,28px 28px 0px #ccc,29px 29px 0px #ccc,30px 30px 0px #ccc;; }
+
+#contents { padding: 100px 0; }
+
+#contents .container { width: 1440px; margin: auto; }
+
+#contents .container .subTitle { color: #fff; font-weight: 400; font-size: 32px; margin-bottom: 100px; text-transform: uppercase; }
+
+#contents .container .subTitle strong { font-size: 32px; font-weight: 900; }
+
+#contents .container .movieList { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+#contents .container .movieList li { width: calc(50% - 20px); background-color: #fff; margin: 10px 10px 100px 10px; display: -webkit-box; display: -ms-flexbox; display: flex; padding: 30px; border-radius: 0 20px 0 20px; }
+
+#contents .container .movieList li .imgBox { margin-top: -100px; position: relative; }
+
+#contents .container .movieList li .imgBox img { -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); }
+
+#contents .container .movieList li .imgBox .point { width: 50px; height: 50px; background-color: #0555c6; color: #fff; border-radius: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; text-shadow: 1px 1px 0px #044094,2px 2px 0px #044094,3px 3px 0px #044094,4px 4px 0px #044094,5px 5px 0px #044094,6px 6px 0px #044094,7px 7px 0px #044094,8px 8px 0px #044094,9px 9px 0px #044094,10px 10px 0px #044094,11px 11px 0px #044094,12px 12px 0px #044094,13px 13px 0px #044094,14px 14px 0px #044094,15px 15px 0px #044094,16px 16px 0px #044094,17px 17px 0px #044094,18px 18px 0px #044094,19px 19px 0px #044094,20px 20px 0px #044094,21px 21px 0px #044094,22px 22px 0px #044094,23px 23px 0px #044094,24px 24px 0px #044094,25px 25px 0px #044094,26px 26px 0px #044094,27px 27px 0px #044094,28px 28px 0px #044094,29px 29px 0px #044094,30px 30px 0px #044094;; position: absolute; left: 10px; font-weight: 700; bottom: 10px; }
+
+#contents .container .movieList li .info { margin-left: 30px; text-align: left; }
+
+#contents .container .movieList li .info .titleBox { margin-bottom: 20px; }
+
+#contents .container .movieList li .info .titleBox h3 { font-size: 24px; }
+
+#contents .container .movieList li .info .titleBox .date { color: #999; margin-top: 10px; font-size: 14px; }
+
+#contents .container .movieList li .info .overview { line-height: 1.25; height: 3.75em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: ellipsis; }
+
+#contents .container .movieList li .info .vote { margin-top: 20px; }
+
+#footer { position: fixed; bottom: 50px; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#footer .copyright { background-color: #fff; padding: 10px 50px; border-radius: 100px; text-transform: uppercase; font-size: 14px; }
+
+#footer .copyright strong { font-weight: 800; }
