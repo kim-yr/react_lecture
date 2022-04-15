@@ -1,8 +1,10 @@
+import { Link } from "react";
 export default function Movie({ info }) {
   //   console.log(props);
   //  http://image.tmdb.org.t/p/w200/
   return (
     <li>
+      {/* <Link href></Link> */}
       <div className="imgBox">
         <img src={`https://image.tmdb.org/t/p/w200/${info.poster_path}`} alt="" />
         <p className="point">{info.vote_average}</p>
