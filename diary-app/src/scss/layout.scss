@@ -1,0 +1,243 @@
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+$point-color: rgb(139, 148, 18);
+$semi-color: rgb(96, 100, 42);
+$background-color: rgb(252, 255, 210);
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+body {
+  font-family: "Fira Sans", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #111;
+  // background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 5%) #333;
+  background-color: #6d695c;
+  background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)),
+    linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  background-size: 70px 120px;
+}
+#header {
+  display: flex;
+  height: 70px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: $semi-color;
+  color: $background-color;
+  position: relative;
+  box-shadow: 0 3px 10px #555;
+  h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    // @include longShadow(#ccc, right, 35);
+    a {
+      color: inherit;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .checkBox {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+    input {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      padding: 0;
+      border: 0;
+    }
+    input:checked ~ .label:before {
+      content: "\e5ca";
+      font-family: "Material Icons";
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      background-color: lighten($point-color, 10);
+
+      @include longShadow($point-color, right, 10);
+    }
+    .label {
+      display: flex;
+      align-items: center;
+      user-select: none;
+      &:before {
+        content: "\e5ca";
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+        margin-right: 6px;
+        font-family: "Material Icons";
+        color: darken(#f8f8f8, 30);
+        border: 1px solid darken(#f8f8f8, 20);
+        font-weight: bold;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background-color: #f8f8f8;
+        @include longShadow(darken(#f8f8f8, 10), right, 10);
+        @include flexCenter();
+      }
+    }
+  }
+}
+.container {
+  width: 800px;
+  margin: 50px auto;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: $background-color;
+  padding: 0 20px;
+  border: none;
+  &:focus {
+    outline-color: $point-color;
+  }
+}
+
+textarea {
+  height: 200px;
+  resize: none;
+  padding: 20px;
+}
+.section {
+  margin-bottom: 20px;
+}
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+}
+.btns {
+  @include flexCenter();
+  .btn {
+    padding: 15px 40px;
+    color: #fff;
+    border-radius: 100px;
+    background-color: $point-color;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 700;
+  }
+}
+.diaryItem {
+  textarea {
+    height: 100px;
+  }
+}
+.infoBox {
+  background-color: $background-color;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  dl {
+    display: flex;
+    align-items: center;
+    dd {
+      margin-left: 10px;
+    }
+  }
+}
+.diaryList {
+  .titleBox {
+    color: #fff;
+    margin: 50px 0;
+    padding-top: 50px;
+    border-top: 1px dashed $background-color;
+    h2 {
+      font-size: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .total {
+      text-align: right;
+    }
+  }
+  .list {
+    li {
+      padding: 20px;
+      background-color: $background-color;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      .info {
+        display: flex;
+        position: relative;
+      }
+      dl {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        dd {
+          margin-left: 5px;
+        }
+      }
+      .btns {
+        position: absolute;
+        right: 5px;
+        top: -7px;
+        .btn {
+          border-radius: 5px;
+          padding: 5px;
+          margin-top: 0;
+          color: $background-color;
+          margin-left: 5px;
+        }
+        .modify {
+          background-color: $semi-color;
+        }
+      }
+      .contents {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 18px;
+        padding-top: 10px;
+        border-top: 1px dashed #d9d9d9;
+      }
+    }
+  }
+}
+#footer {
+  display: flex;
+  width: 100%;
+  // position: fixed;
+  margin: 50px 0;
+  bottom: 50px;
+  justify-content: center;
+  .copyright {
+    padding: 7px 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: $background-color;
+    border: 5px solid $semi-color;
+    border-radius: 100px;
+    strong {
+      font-weight: 500;
+      color: $point-color;
+    }
+  }
+}
